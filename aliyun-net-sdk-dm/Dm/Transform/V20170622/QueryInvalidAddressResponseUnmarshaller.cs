@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Dm.Transform.V20170622
 
 			queryInvalidAddressResponse.HttpResponse = context.HttpResponse;
 			queryInvalidAddressResponse.RequestId = context.StringValue("QueryInvalidAddress.RequestId");
-			queryInvalidAddressResponse.NextStart = context.IntegerValue("QueryInvalidAddress.NextStart");
+			queryInvalidAddressResponse.NextStart = context.StringValue("QueryInvalidAddress.NextStart");
 			queryInvalidAddressResponse.TotalCount = context.IntegerValue("QueryInvalidAddress.TotalCount");
 
 			List<QueryInvalidAddressResponse.QueryInvalidAddress_MailDetail> queryInvalidAddressResponse_data = new List<QueryInvalidAddressResponse.QueryInvalidAddress_MailDetail>();
-			for (int i = 0; i < context.Length("QueryInvalidAddress.Data.Length"); i++) {
+			for (int i = 0; i < context.Length("QueryInvalidAddress.data.Length"); i++) {
 				QueryInvalidAddressResponse.QueryInvalidAddress_MailDetail mailDetail = new QueryInvalidAddressResponse.QueryInvalidAddress_MailDetail();
-				mailDetail.LastUpdateTime = context.StringValue("QueryInvalidAddress.Data["+ i +"].LastUpdateTime");
-				mailDetail.UtcLastUpdateTime = context.LongValue("QueryInvalidAddress.Data["+ i +"].UtcLastUpdateTime");
-				mailDetail.ToAddress = context.StringValue("QueryInvalidAddress.Data["+ i +"].ToAddress");
+				mailDetail.LastUpdateTime = context.StringValue("QueryInvalidAddress.data[" + i +"].LastUpdateTime");
+				mailDetail.UtcLastUpdateTime = context.LongValue("QueryInvalidAddress.data[" + i +"].UtcLastUpdateTime");
+				mailDetail.ToAddress = context.StringValue("QueryInvalidAddress.data[" + i +"].ToAddress");
 
 				queryInvalidAddressResponse_data.Add(mailDetail);
 			}

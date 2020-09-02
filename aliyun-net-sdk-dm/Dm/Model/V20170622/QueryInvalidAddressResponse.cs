@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Dm.Model.V20170622
 
 		private string requestId;
 
-		private int? nextStart;
+		private string nextStart;
 
 		private int? totalCount;
 
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Dm.Model.V20170622
 			}
 		}
 
-		public int? NextStart
+		public string NextStart
 		{
 			get
 			{
